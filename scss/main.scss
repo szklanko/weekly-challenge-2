@@ -155,8 +155,17 @@ a.button{
         position: absolute;
         bottom: 2rem;
         left: 49.3%;
+        animation: jump 1s ease-out;
+        -webkit-animation: jump 1s ease-out infinite;
     }
 }
+
+@keyframes jump{
+    0% {bottom: 2rem}
+    30% {bottom: 2.5rem}
+    100% {bottom: 2rem}
+}
+
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::ABOUT SECTION
 
