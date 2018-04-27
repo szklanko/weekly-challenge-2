@@ -1,1 +1,39 @@
 @import 'variables.scss';
+
+@mixin slide-left ($color1, $color2, $text-color){
+
+    .slide-left{
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        background: $color1;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        transition: color 0.2s
+    }
+
+    .slide-left:before{
+        content: "";
+        position: absolute;
+        background: $color2;
+        top: 0;
+        bottom:0;
+        right:0;
+        left:0;
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.2s ease-out;
+    }
+
+    .slide-left:active, .slide-left:focus, .slide-left:hover{
+        color: $text-color;
+    }
+
+
+    .slide-left:active:before, .slide-left:focus:before, .slide-left:hover:before{
+        transform: scaleX(1);
+    }
+
+
+}
